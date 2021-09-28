@@ -10,7 +10,8 @@ const wrapper = document.querySelector(".wrapper"),
   progressBar = wrapper.querySelector(".progress-bar"),
   musicList = wrapper.querySelector(".music-list"),
   showMoreBtn = wrapper.querySelector("#more-music"),
-  hideMusicBtn = musicList.querySelector("#close");
+  hideMusicBtn = musicList.querySelector("#close"),
+  volumeslider = document.getElementById("volumeslider");
 
 // Load random music on page refresh
 let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
@@ -80,8 +81,14 @@ prevBtn.addEventListener("click", () => {
   prevMusic();
 });
 
+// Volume control
+function volume_change() {
+  volumeslider.innerHTML = recent_volume.value;
+  track.volume = recent_volume.value / 100;
+}
+
 // Update progress bar width according to music current time
-mainAudio.addEventListener("timeupdate", (e) => {
+mainAudio.addEventListener("timeupdate", e => {
   const currentTime = e.target.currentTime;
   const duration = e.target.duration;
   let progressWidth = (currentTime / duration) * 100;
@@ -111,7 +118,7 @@ mainAudio.addEventListener("timeupdate", (e) => {
 });
 
 // Update playing song current time according to the progress bar
-progressArea.addEventListener("click", (e) => {
+progressArea.addEventListener("click", e => {
   let progressWidthval = progressArea.clientWidth;
   let clickedOffSetX = e.offsetX;
   let songDuration = mainAudio.duration;
