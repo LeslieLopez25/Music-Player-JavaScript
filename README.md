@@ -10,4 +10,4 @@
 
 ### Screenshots
 
-<img src="screenshots/music-player.png" width="400">
+<img src="screenshot/music-player.png" width="400">
