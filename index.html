@@ -26,19 +26,17 @@
         <i class="material-icons">more_horiz</i>
       </div>
       <div id="volume-container">
-        <i class="material-icons" id="volume-down">volume_down</i>
+        <i class="material-icons">volume_down</i>
         <input
           type="range"
-          class="slider"
-          id="volumeslider"
-          onchange="volume_change()"
+          class="volume_slider"
+          onchange="setVolume()"
+          oninput="setVolume()"
           min="0"
           max="100"
-          value="90"
+          value="50"
         />
-        <i class="material-icons" id="volume-up" onclick="mute_sound()"
-          >volume_up</i
-        >
+        <i class="material-icons">volume_up</i>
       </div>
       <div class="img-area">
         <img src="" alt="" />

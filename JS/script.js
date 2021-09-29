@@ -3,6 +3,7 @@ const wrapper = document.querySelector(".wrapper"),
   musicName = wrapper.querySelector(".song-details .name"),
   musicArtist = wrapper.querySelector(".song-details .artist"),
   mainAudio = wrapper.querySelector("#main-audio"),
+  volume_slider = wrapper.querySelector(".volume_slider"),
   playPauseBtn = wrapper.querySelector(".play-pause"),
   prevBtn = wrapper.querySelector("#prev"),
   nextBtn = wrapper.querySelector("#next"),
@@ -10,8 +11,7 @@ const wrapper = document.querySelector(".wrapper"),
   progressBar = wrapper.querySelector(".progress-bar"),
   musicList = wrapper.querySelector(".music-list"),
   showMoreBtn = wrapper.querySelector("#more-music"),
-  hideMusicBtn = musicList.querySelector("#close"),
-  volumeslider = document.getElementById("volumeslider");
+  hideMusicBtn = musicList.querySelector("#close");
 
 // Load random music on page refresh
 let musicIndex = Math.floor(Math.random() * allMusic.length + 1);
@@ -82,9 +82,8 @@ prevBtn.addEventListener("click", () => {
 });
 
 // Volume control
-function volume_change() {
-  volumeslider.innerHTML = recent_volume.value;
-  track.volume = recent_volume.value / 100;
+function setVolume() {
+  mainAudio.volume = volume_slider.value / 100;
 }
 
 // Update progress bar width according to music current time

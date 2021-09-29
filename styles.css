@@ -307,9 +307,9 @@ ul li.playing {
     align-items: center;
 }
 
-.slider {
+.volume_slider {
     width: 150px;
-    height: 2px;
+    height: 5px;
     -webkit-appearance: none;
     border-radius: 10px;
     background-color: var(--ghost-white);
@@ -318,10 +318,10 @@ ul li.playing {
     position: relative;
 }
 
-.slider::-moz-range-thumb {
-    -webkit-appearance: none;
-    width: 10px;
-    height: 10px;
+.volume_slider::-moz-range-thumb {
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
     background-color: var(--phthalo-blue);
     border-radius: 50%;
     cursor: pointer;
@@ -329,6 +329,6 @@ ul li.playing {
     transform: scale(1);
 }
 
-.slider:active::-moz-range-thumb {
+.volume_slider:active::-moz-range-thumb {
     transform: scale(1.2);
 }
