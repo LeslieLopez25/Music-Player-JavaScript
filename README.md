@@ -8,6 +8,6 @@
 
 - Live Site: [Music Player](https://leslielopez25.github.io/Music-Player-JavaScript/)
 
-### Screenshots
+### Screenshot
 
 <img src="screenshot/music-player.png" width="400">
